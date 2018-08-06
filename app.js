@@ -12,4 +12,8 @@ client.on("message", function(message) {
     }
 });
 
-client.login("NDY3NjcyODg2NTIyNTQ0MTI4.DiuB2A.2gd4v5I4-OAycI_DAo_IDv0SuEs");
+fs.readFile("gitignore/token.txt", "utf8", function(err, data) {
+    if (err) throw err;
+
+    client.login(data);
+})
